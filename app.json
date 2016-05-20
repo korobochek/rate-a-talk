@@ -1,0 +1,8 @@
+{
+  "name": "Rate-A-Talk",
+  "description": "A very simple rating system for Agile Australia talks",
+  "repository": "https://github.com/korobochek/rate-a-talk.git",
+  "logo": "",
+  "keywords": ["node", "express", "react", "agile", "australia", "ux", "dev"],
+  "image": "heroku/nodejs"
+}

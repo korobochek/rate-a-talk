@@ -1,0 +1,16 @@
+{
+  "name": "rate-a-talk",
+  "version": "1.0.0",
+  "description": "Rate an AgileAustralia 2016 talk",
+  "scripts": {
+    "start": "node server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/korobochek/rate-a-talk.git"
+  },
+  "dependencies": {
+    "express": "^4.13.4",
+    "path": "^0.12.7"
+  }
+}
