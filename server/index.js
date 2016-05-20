@@ -1,16 +1,24 @@
-var express = require('express');
-var path = require('path')
+import express from 'express'
+import path from 'path'
+import listTalks from './db/talks.js'
 
-const app = express();
-const port = 3000;
+const app = express()
+const port = process.env.PORT || 5000
+console.log('starting server on port ', port)
 
-//app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/../public'))
 
+//serve ui
 app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, '/../views/index.html'));
+  res.sendFile(path.join(__dirname, '/../public/index.html'));
 });
+
+//serves back end
+app.get('/talks', function(req, res) {
+  listTalks().then(function(talks) { res.json(talks) })
+})
 
 app.get('*', function(req, res) {
-  res.json({ 'route': 'Sorry this page does not exist!' });
-});
-app.listen(port);
+  res.sendFile(path.join(__dirname, '/../public/404.html'));
+})
+app.listen(port)
