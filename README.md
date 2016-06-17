@@ -39,6 +39,12 @@ To run and watch node server locally:
 
   `npm run server-start`
 
+## Deployment
+
+The master branch from this project is automatically built and deployed to heroku. The imortant details here are the contets of Procfile and the 'heroku-postbuild' script in package.json.
+
+The app url on Heroku: https://rate-a-talk.herokuapp.com/
+
 ## Additonal notes
 
 All dependencies required to build/run an app must be installed as non-dev dependencies, since heroku does not install dev deps automatically by default.
