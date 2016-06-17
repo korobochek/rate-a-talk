@@ -1,7 +1,8 @@
 import Sequelize from 'sequelize'
 import connection from './connection'
+import q from 'q'
 
-const Talks = connection.define('talks', {
+const Talk = connection.define('talks', {
   day: Sequelize.STRING,
   time: Sequelize.STRING,
   room: Sequelize.STRING,
@@ -10,8 +11,21 @@ const Talks = connection.define('talks', {
 },
 { timestamps: false })
 
+const Rating = connection.define('ratings', {
+  rating: Sequelize.INTEGER,
+  comment: Sequelize.TEXT,
+  talkId: { type: Sequelize.INTEGER, field: 'talkid'}
+},
+{ timestamps: false })
+
+Talk.hasMany(Rating)
+
 function listTalks() {
-  return Talks.findAll()
+  return Talk.findAll()
 }
 
-export default listTalks
+function listRatingsForTalk(talkId) {
+  return Talk.find({ where: { id: talkId }, include: [{ model: Rating }] })
+}
+
+export { listTalks, listRatingsForTalk }

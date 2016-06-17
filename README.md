@@ -15,11 +15,11 @@ Once installed start it up and create 'agile-australia' db, i.e.
 
 Run create-tables.sql
 
-  `psql -D agile-australia db/create-tables.sql`
+  `psql -D agile-australia db/setup/create-tables.sql`
 
 Run populate-data.sql
 
-  `psql -D agile-australia db/create-tables.sql`
+  `psql -D agile-australia db/setup/populate-data.sql`
 
 ## Install
 
