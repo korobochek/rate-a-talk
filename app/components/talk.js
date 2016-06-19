@@ -31,6 +31,7 @@ export default class Talk extends Component {
           empty={'fa fa-star-o'}
           full={'fa fa-star'}
           name={'test'}
+          initialRate={this.props.talk.averageRating}
           onClick={this.onStarRatingPress.bind(this)}
         />
       </div>

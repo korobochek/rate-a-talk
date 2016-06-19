@@ -20,7 +20,7 @@ const Rating = connection.define('ratings', {
 Talk.hasMany(Rating)
 
 function listTalks() {
-  return Talk.findAll()
+  return Talk.findAll({ include: [{ model: Rating }] })
 }
 
 function listRatingsForTalk(talkId) {

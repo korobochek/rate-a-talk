@@ -4,6 +4,7 @@ import path from 'path'
 
 import { listTalks, listRatingsForTalk } from './db/talks'
 import { saveRating } from './db/ratings'
+import { talksWithAverageRating } from './services/talks'
 
 const app = express()
 const port = process.env.PORT || 5000
@@ -19,7 +20,7 @@ app.get('/', function (req, res) {
 
 //serves back end
 app.get('/talks', function(req, res) {
-  listTalks().then(talks => res.json(talks))
+  talksWithAverageRating().then(talks => res.json(talks))
 })
 
 app.get('/talks/:id', function(req, res) {
