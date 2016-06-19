@@ -1,6 +1,5 @@
 import Sequelize from 'sequelize'
 import connection from './connection'
-import q from 'q'
 
 const Talk = connection.define('talks', {
   day: Sequelize.STRING,

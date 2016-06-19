@@ -25,7 +25,7 @@ export default class TalksList extends Component {
       <div>
         <h2>Talks</h2>
         <div className="flexible-box">
-        { this.state.talks.map(talk => (<div className="flexible-component" key={talk.id}><Talk talk={talk}></Talk><i className="fa fa-star-o"></i><i className="fa fa-star-o"></i><i className="fa fa-star-o"></i><i className="fa fa-star-o"></i><i className="fa fa-star-o"></i></div>)) }
+        { this.state.talks.map(talk => (<div className="flexible-component" key={talk.id}><Talk talk={talk}></Talk></div>)) }
         </div>
       </div>
     )
