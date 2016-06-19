@@ -23,7 +23,12 @@ export default class TalksList extends Component {
   render() {
     return (
       <div>
-        <h2>Talks</h2>
+        <div className="flexible-box">
+          <h1 className="hero flexible-title">Agile Australia 2016</h1>
+        </div>
+        <div className="flexible-box">
+          <h2 className="flexible-title">Talks</h2>
+        </div>
         <div className="flexible-box">
         { this.state.talks.map(talk => (<div className="flexible-component" key={talk.id}><Talk talk={talk}></Talk></div>)) }
         </div>

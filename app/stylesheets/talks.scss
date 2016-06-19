@@ -1,6 +1,11 @@
-h4 {
-  color: green;
+@import 'node_modules/sass-material-colors/sass/sass-material-colors';
+
+body {
+   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+   font-weight: 300;
 }
+
+h1, h2, h3, h4, h5, h6 { font-weight: 100; }
 
 .flexible-box { 
 	display: -webkit-flex;
@@ -12,5 +17,14 @@ h4 {
 }
 .flexible-component { 
 	width: 200px;
-	margin: 30px;
+	margin: 15px;
+	padding: 15px;
+	background: material-color('grey', '100');
+	&:hover { background-color: green; }
+}
+.flexible-title { 
+	width: 100%;
+	text-align: center;
+	margin: 15px;
+	padding: 15px;
 }
