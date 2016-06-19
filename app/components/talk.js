@@ -10,9 +10,11 @@ export default class Talk extends Component {
 
   render() {
     return (
-      <div>
-        <h4>{this.props.talk.name}</h4>
-        { this.props.talk.speakers ? (<h5>{this.props.talk.speakers}</h5>) : null }
+     <div>
+      
+          <h4>{this.props.talk.name}</h4>
+          { this.props.talk.speakers ? (<h5>{this.props.talk.speakers}</h5>) : null }
+      
       </div>
     )
   }
