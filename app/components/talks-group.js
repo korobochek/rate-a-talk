@@ -10,7 +10,7 @@ export default class TalksGroup extends Component {
 
   render() {
     return (
-      <div>
+      <div className="flexible-component">
         <div className="flexible-box">
           <h2>{this.props.grouping}</h2>
         </div>
