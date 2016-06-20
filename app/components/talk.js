@@ -24,16 +24,20 @@ export default class Talk extends Component {
 
   render() {
     return (
-      <div>
+      <div className="flexible-column">
         <h4>{this.props.talk.name}</h4>
         { this.props.talk.speakers ? (<h5>{this.props.talk.speakers}</h5>) : null }
-        <Rating
-          empty={'fa fa-star-o'}
-          full={'fa fa-star'}
-          name={'test'}
-          initialRate={this.props.talk.averageRating}
-          onClick={this.onStarRatingPress.bind(this)}
-        />
+        <div>
+          <div className="stars">
+            <Rating
+              empty={'fa fa-star-o'}
+              full={'fa fa-star'}
+              name={'test'}
+              initialRate={this.props.talk.averageRating}
+              onClick={this.onStarRatingPress.bind(this)}
+            />
+          </div>
+        </div>
       </div>
     )
   }

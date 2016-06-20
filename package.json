@@ -34,11 +34,11 @@
     "q": "1.4.1",
     "react": "15.1.0",
     "react-dom": "15.1.0",
-    "react-rating": "0.2.2",
+    "react-rating": "^0.2.2",
     "sass-loader": "3.2.0",
+    "sass-material-colors": "0.0.5",
     "sequelize": "3.23.3",
     "style-loader": "0.13.1",
-    "webpack": "1.13.1",
-    "sass-material-colors": "0.0.5"
+    "webpack": "1.13.1"
   }
 }

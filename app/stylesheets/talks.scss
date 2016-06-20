@@ -14,17 +14,32 @@ h1, h2, h3, h4, h5, h6 { font-weight: 100; }
 	flex-direction: row;
 	-webkit-flex-wrap: wrap;
 	flex-wrap: wrap;
+	-webkit-justify-content: center;
+	justify-content: center;
 }
 .flexible-component { 
 	width: 200px;
 	margin: 15px;
 	padding: 15px;
 	background: material-color('grey', '100');
-	&:hover { background-color: green; }
+	&:hover { background-color: material-color('lime', '200'); }
 }
 .flexible-title { 
 	width: 100%;
 	text-align: center;
 	margin: 15px;
 	padding: 15px;
+}
+.flexible-column { 
+	height: 200px;
+    display: flex;
+    display: -webkit-flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    justify-content: space-between;
+    }
+.stars { 
+	font-size: 20pt; 
+	text-align: center;
+	display: block;
 }
