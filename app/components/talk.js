@@ -39,7 +39,7 @@ export default class Talk extends Component {
             />
           </div>
         </div>
-        <Link className="button" to={`/details/${this.props.talk.id}`}>COMMENTS</Link>
+        <Link className="button" to={`/details/${this.props.talk.id}`}>View and leave feedback</Link>
       </div>
     )
   }
