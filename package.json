@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Rate an AgileAustralia 2016 talk",
   "scripts": {
-    "heroku-postbuild": "rm ./public/javascript/*.js && webpack --progress --verbose --colors --display-error-details --config webpack/common.config.js ",
+    "heroku-postbuild": "webpack --progress --verbose --colors --display-error-details --config webpack/common.config.js ",
     "start": "./node_modules/babel-cli/bin/babel-node.js server/index.js --presets es2015,stage-2",
     "server-start": "DATABASE_URL='postgresql:///agile-australia' ./node_modules/nodemon/bin/nodemon.js server/index.js --exec node_modules/babel-cli/bin/babel-node.js --presets es2015,stage-2",
     "ui-start": "webpack --watch --progress --verbose --colors --display-error-details --config webpack/common.config.js"
