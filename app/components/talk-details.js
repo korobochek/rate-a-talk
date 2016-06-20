@@ -48,6 +48,7 @@ export default class TalkDetails extends Component {
     const comments = _.map(_.filter(this.state.talk.ratings,
                                     rating => rating.comment && rating.comment != 0),
                            rating => rating.comment)
+    const commentsClass = this.state.success ? "comments cannot-input" : "comments"
     return (
       <div className="flexible-box">
         <div className="flexible-component">
@@ -72,7 +73,7 @@ export default class TalkDetails extends Component {
         <div className="flexible-component">
           <div className="flexible-column">
             <textarea
-            className="comments"
+            className={commentsClass}
             onChange={event => this.setState(_.merge(this.state, { comment: event.target.value })) }
             />
             <button
@@ -82,7 +83,7 @@ export default class TalkDetails extends Component {
               Save
             </button>
             {this.state.success ? <div className="hero-2">Thank you</div> : null}
-          </div> 
+          </div>
         </div>
         <div className="flexible-component">
           <h2>Comments so far</h2>
