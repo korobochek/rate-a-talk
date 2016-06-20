@@ -16,6 +16,9 @@ export default class Talk extends Component {
         <h3 className="talk-title">{this.props.talk.name}</h3>
         { this.props.talk.speakers ? (<h5>{this.props.talk.speakers}</h5>) : null }
         <div>
+        <div className="annotation">
+          Average rating so far:
+        </div>
           <CustomRating readonly={true} initialRate={this.props.talk.averageRating} talkId={this.props.talk.id} />
         </div>
         <Link className="button" to={`/details/${this.props.talk.id}`}>View and leave feedback</Link>

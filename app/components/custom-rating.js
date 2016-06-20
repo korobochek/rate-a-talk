@@ -52,7 +52,9 @@ export default class CustomRating extends Component {
             readonly={this.state.readonly}
           />
         </div>
-        { this.state.success ? (<div>Thank you :)</div>) : null }
+        { this.state.success ? (
+          <div className="thank-you-hero">Thank you</div>
+          ) : null }
       </div>
     )
   }
