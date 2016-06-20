@@ -43,6 +43,9 @@ export default class TalkDetails extends Component {
 
   render() {
     const ratingsCount = _.filter(this.state.talk.ratings, rating => rating.rating && rating.rating != 0).length
+    const comments = _.map(_.filter(this.state.talk.ratings,
+                                    rating => rating.comment && rating.comment != 0),
+                           rating => rating.comment)
     return (
       <div className="flexible-box">
         <div className="flexible-component">
@@ -71,7 +74,17 @@ export default class TalkDetails extends Component {
             className="commentses"
             onChange={event => this.setState(_.merge(this.state, { comment: event.target.value })) }
           />
-          <button className="button" onClick={ event => this.saveComment(this.state.talk.id, this.state.comment) }>Save</button>
+          <button
+            className="button"
+            onClick={ event => this.saveComment(this.state.talk.id, this.state.comment) }
+            disabled={ this.state.success }>
+            Save
+          </button>
+          {this.state.success ? <div>Thank you</div> : null}
+        </div>
+        <div>
+          <div>All the commentses</div>
+          { comments.map(comment => (<div key={Math.random()}>{comment}</div>)) }
         </div>
       </div>
     )
