@@ -28,6 +28,8 @@
     "lodash": "4.13.1",
     "node-sass": "3.7.0",
     "nodemon": "1.9.2",
+    "normalize-scss": "^5.0.3",
+    "normalize.css": "^4.1.1",
     "path": "0.12.7",
     "pg": "5.1.0",
     "pg-hstore": "2.3.2",
