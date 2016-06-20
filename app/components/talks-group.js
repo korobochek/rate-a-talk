@@ -10,14 +10,16 @@ export default class TalksGroup extends Component {
 
   render() {
     return (
-      <div className="flexible-component">
+      <div>
         <div className="flexible-box">
           <h2>{this.props.grouping}</h2>
         </div>
-        { this.props.talks ?
+        <div className="flexible-box">
+          { this.props.talks ?
           this.props.talks.map(talk =>
             (<div className="flexible-component" key={talk.id}><Talk talk={talk}></Talk></div>)) : null
-        }
+          }
+        </div>
       </div>
     )
   }
