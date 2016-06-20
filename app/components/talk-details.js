@@ -23,7 +23,7 @@ export default class TalkDetails extends Component {
     return (
       <div className="flexible-box">
         <div className="flexible-component">
-          <h1>{ this.state.talk.name }</h1>
+          <h1 className="talk-title">{ this.state.talk.name }</h1>
         </div>
         <div className="flexible-component">
           <h3>{ this.state.talk.speakers }</h3>
