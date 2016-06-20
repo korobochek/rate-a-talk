@@ -2,9 +2,9 @@ import express from 'express'
 import bodyParser from 'body-parser'
 import path from 'path'
 
-import { listTalks, listRatingsForTalk } from './db/talks'
+import { listTalks } from './db/talks'
 import { saveRating } from './db/ratings'
-import { talksWithAverageRating } from './services/talks'
+import { talksWithAverageRating, specificTalkWithAverageRating } from './services/talks'
 
 const app = express()
 const port = process.env.PORT || 5000
@@ -24,7 +24,7 @@ app.get('/talks', function(req, res) {
 })
 
 app.get('/talks/:id', function(req, res) {
-  listRatingsForTalk(req.params.id).then(talks => res.json(talks))
+  specificTalkWithAverageRating(req.params.id).then(talks => res.json(talks))
 })
 
 app.post('/ratings', function(req, res) {

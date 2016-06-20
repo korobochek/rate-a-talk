@@ -1,4 +1,4 @@
-import { listTalks } from '../db/talks'
+import { listTalks, listRatingsForTalk } from '../db/talks'
 import q from 'q'
 import _ from 'lodash'
 
@@ -17,4 +17,13 @@ function talksWithAverageRating() {
   return deferred.promise
 }
 
-export { talksWithAverageRating }
+function specificTalkWithAverageRating(talkId) {
+  const deferred = q.defer()
+  listRatingsForTalk(talkId).then(talk => {
+    console.log(talk)
+    deferred.resolve(calculateAveRating(talk))
+  })
+  return deferred.promise
+}
+
+export { talksWithAverageRating, specificTalkWithAverageRating }
