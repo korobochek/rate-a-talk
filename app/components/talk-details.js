@@ -36,6 +36,8 @@ export default class TalkDetails extends Component {
           window.location = '/500.html'
         } else {
           this.setState({ success: true })
+          this.state.talk.ratings.push({ rating: null, comment: comment, talkId: talkId })
+          this.setState({ talk: this.state.talk })
         }
       }
     })
