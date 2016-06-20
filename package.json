@@ -37,6 +37,7 @@
     "react": "15.1.0",
     "react-dom": "15.1.0",
     "react-rating": "^0.2.2",
+    "react-router": "^2.4.1",
     "sass-loader": "3.2.0",
     "sass-material-colors": "0.0.5",
     "sequelize": "3.23.3",

@@ -1,5 +1,6 @@
 import $ from 'jquery'
 import React, { Component } from 'react'
+import { Link } from 'react-router'
 import Rating from 'react-rating'
 
 import 'stylesheets/talks.scss'
@@ -38,7 +39,7 @@ export default class Talk extends Component {
             />
           </div>
         </div>
-        <button className="button">COMMENTS</button>
+        <Link className="button" to={`/details/${this.props.talk.id}`}>COMMENTS</Link>
       </div>
     )
   }
