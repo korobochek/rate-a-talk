@@ -39,6 +39,9 @@ const common = {
       }, {
         test: /\.scss$/,
         loaders: ["style", "css", "sass"]
+      }, {
+        test: /\.png$/,
+        loader: 'file?name=[name].[ext]'
       }
     ]
   },
