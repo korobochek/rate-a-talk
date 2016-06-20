@@ -20,7 +20,6 @@ function talksWithAverageRating() {
 function specificTalkWithAverageRating(talkId) {
   const deferred = q.defer()
   listRatingsForTalk(talkId).then(talk => {
-    console.log(talk)
     deferred.resolve(calculateAveRating(talk))
   })
   return deferred.promise

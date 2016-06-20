@@ -31,11 +31,11 @@ export default class TalkDetails extends Component {
         <div className="flexible-component">
           <div className="flexible-box">
             <div className="flexible-component">
-              <h4>Current Rating</h4>
+              <h4>Current Rating is {this.state.talk.averageRating}/5</h4>
             </div>
-            <div className="flexible-component">
-              {this.state.talk.averageRating}/5
-            </div>
+            { this.state.talk.ratings ?
+              (<div className="flexible-component">with {this.state.talk.ratings.length} votes</div>) : null
+            }
           </div>
         </div>
         <div className="flexible-component">
