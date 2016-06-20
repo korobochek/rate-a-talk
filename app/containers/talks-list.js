@@ -40,10 +40,8 @@ export default class TalksList extends Component {
         <div className="flexible-box">
           <h2 className="flexible-title">Talks</h2>
         </div>
-        <div className="flexible-box">
-          <TalksGroup talks={groupedTalks['Monday 20 June 2016']} grouping={'Monday 20 June 2016'} />
-          <TalksGroup talks={groupedTalks['Tuesday 21 June 2016']} grouping={'Tuesday 21 June 2016'} />
-        </div>
+        <TalksGroup talks={groupedTalks['Monday 20 June 2016']} grouping={'Monday 20 June 2016'} />
+        <TalksGroup talks={groupedTalks['Tuesday 21 June 2016']} grouping={'Tuesday 21 June 2016'} />
       </div>
     )
   }

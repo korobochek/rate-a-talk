@@ -25,7 +25,7 @@ export default class Talk extends Component {
   render() {
     return (
       <div className="flexible-column">
-        <h3>{this.props.talk.name}</h3>
+        <h3 className="talk-title">{this.props.talk.name}</h3>
         { this.props.talk.speakers ? (<h5>{this.props.talk.speakers}</h5>) : null }
         <div>
           <div className="stars">
