@@ -3,9 +3,14 @@
 body {
    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
    font-weight: 300;
+   font-size: 1.5em;
 }
 
-h1, h2, h3, h4, h5, h6 { font-weight: 100; }
+h1, h2, h3, h4, h5, h6 { 
+	font-weight: 100; 
+	margin: 0.5em;
+}
+
 
 .flexible-box { 
 	display: -webkit-flex;
@@ -18,20 +23,18 @@ h1, h2, h3, h4, h5, h6 { font-weight: 100; }
 	justify-content: center;
 }
 .flexible-component { 
-	width: 200px;
-	margin: 15px;
-	padding: 15px;
+	width: 10em;
+	margin: 0.5em;
+	padding: 0.5em;
 	background: material-color('grey', '100');
-	&:hover { background-color: material-color('lime', '200'); }
+	// &:hover { background-color: material-color('lime', '200'); }
 }
 .flexible-title { 
 	width: 100%;
 	text-align: center;
-	margin: 15px;
-	padding: 15px;
 }
 .flexible-column { 
-	height: 250px;
+	height: 20em;
     display: flex;
     display: -webkit-flex;
     -webkit-flex-direction: column;
@@ -39,13 +42,16 @@ h1, h2, h3, h4, h5, h6 { font-weight: 100; }
     justify-content: space-between;
     }
 .stars { 
-	font-size: 20pt; 
+	font-size: 2em; 
 	text-align: center;
 	display: block;
 }
 .button { 
 	margin-top: 10px;
-	padding: 5px;
+	padding: 15px;
+	border: none;
+	font-size: 15pt;
+	font-weight: 800;
 	background-color: material-color('lime', '300');
-	&:hover { background-color: material-color('lime', '200'); }
+	&:hover { background-color: material-color('lime', '400'); }
 }
