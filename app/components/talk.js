@@ -38,6 +38,7 @@ export default class Talk extends Component {
             />
           </div>
         </div>
+        <button className="button">COMMENTS</button>
       </div>
     )
   }
