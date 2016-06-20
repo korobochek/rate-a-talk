@@ -53,37 +53,37 @@ export default class TalkDetails extends Component {
         </div>
         {this.state.talk.speakers ?
           (<div className="flexible-component">
-            <h3>{ this.state.talk.speakers }</h3>
+            <h2>{ this.state.talk.speakers }</h2>
            </div>) : null
         }
         <div className="flexible-component">
-          <div className="flexible-box">
-            <div className="flexible-component">
-              <h4>Current Rating is {this.state.talk.averageRating}/5</h4>
-            </div>
-            { this.state.talk.ratings ?
-              (<div className="flexible-component">with {ratingsCount} votes</div>) : null
-            }
-          </div>
+          <h2>Current Rating is</h2>
+          <div className="hero-rating">{this.state.talk.averageRating}/5</div>
+          { this.state.talk.ratings ?
+            (<div className="flexible-component">with {ratingsCount} votes</div>) : null
+          }
         </div>
         <div className="flexible-component">
+          <div className="hero-rating">Tap to rate</div>
           <CustomRating readonly={false} initialRate={0} talkId={this.state.talk.id} />
         </div>
         <div className="flexible-component">
-          <textarea
-            className="commentses"
+          <div className="flexible-column">
+            <textarea
+            className="comments"
             onChange={event => this.setState(_.merge(this.state, { comment: event.target.value })) }
-          />
-          <button
-            className="button"
-            onClick={ event => this.saveComment(this.state.talk.id, this.state.comment) }
-            disabled={ this.state.success }>
-            Save
-          </button>
-          {this.state.success ? <div>Thank you</div> : null}
+            />
+            <button
+              className="button"
+              onClick={ event => this.saveComment(this.state.talk.id, this.state.comment) }
+              disabled={ this.state.success }>
+              Save
+            </button>
+            {this.state.success ? <div className="hero-2">Thank you</div> : null}
+          </div> 
         </div>
-        <div>
-          <div>All the commentses</div>
+        <div className="flexible-component">
+          <h2>Comments so far</h2>
           { comments.map(comment => (<div key={Math.random()}>{comment}</div>)) }
         </div>
       </div>
