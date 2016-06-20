@@ -79,7 +79,7 @@ export default class TalkDetails extends Component {
             <button
               className="button"
               onClick={ event => this.saveComment(this.state.talk.id, this.state.comment) }
-              disabled={ this.state.success }>
+              disabled={ this.state.comment === '' || this.state.success }>
               Save
             </button>
             {this.state.success ? <div className="hero-2">Thank you</div> : null}
