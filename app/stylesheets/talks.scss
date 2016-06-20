@@ -58,7 +58,5 @@ h1, h2, h3, h4, h5, h6 {
 	&:hover { background-color: material-color('lime', '400'); }
 }
 @media screen and (max-width: 800px) {
-    .flexible-component {
-        width: 100%;
-    }
+    .flexible-component { width: 100%; }
 }
