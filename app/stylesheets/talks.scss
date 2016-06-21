@@ -2,7 +2,7 @@
 @import 'node_modules/sass-material-colors/sass/sass-material-colors';
 
 body {
-	background-color: material-color('pink', '200');
+	background-color: material-color('pink', '900');
 	font-family: "Roboto", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
 	font-weight: 300;
 	margin: 0;
@@ -11,7 +11,6 @@ body {
 h1, h2, h3, h4, h5, h6 { 
 	font-weight: 100; 
 	margin: 0;
-	padding: 0.5rem;
 }
 
 .flexible-box { 
@@ -27,13 +26,10 @@ h1, h2, h3, h4, h5, h6 {
 .flexible-component { 
 	flex-grow: 1;
 	width: 25%;
-	margin: 1.5rem;
+	min-width: 24rem;
+	// margin: 1.5rem;
 	padding: 1.5rem;
-	background: material-color('grey', '100');
-}
-.flexible-title { 
-	width: 100%;
-	text-align: center;
+	// background: material-color('grey', '100');
 }
 .flexible-column { 
 	height: 20rem;
@@ -43,9 +39,17 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: column;
     justify-content: space-between;
 }
+
 .monday { background-color: material-color('pink','600');}
 .tuesday { background-color: material-color('pink','700');}
-.annotation { margin-top: 2rem; }
+
+// TITLES
+.flexible-title { 
+	width: 100%;
+	text-align: center;
+}
+.date-title { color: white;}
+
 .stars { 
 	color: material-color('cyan', '600');
 	margin-top: 0.5rem;
@@ -53,6 +57,7 @@ h1, h2, h3, h4, h5, h6 {
 	text-align: center;
 	display: block;
 }
+
 .hero { 
 	background-color: material-color('cyan','400');
 	font-size: 4rem;
@@ -73,14 +78,6 @@ h1, h2, h3, h4, h5, h6 {
 .talk-title { 
 	font-weight: 500;
 	text-transform: uppercase;
-}
-.date-title { 
-	color: white;
-	h2 { 
-		border-bottom: 3px solid white; 
-		padding: 1rem;
-		margin-bottom: 1rem;
-	}
 }
 .button { 
 	color: black;
@@ -148,31 +145,31 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media screen and (max-width: 800px) {
-    .flexible-component { 
-    	width: 100%; 
-    	margin: 1rem 0;
-    }
-    .flexible-column { height: auto; }
-    .ratings-detail .flexible-component { 
-    	width: 100%; 
-    	margin: 0 1rem;
-    	padding: 1rem 0;
-    }
-    .flexible-component.talk-speaker { 
-    	background-color: transparent;
-    	height: auto;
-    	width: auto;
-    	padding: 0;
-    	border-radius: 0;
-    }
-    .flexible-column { text-align: center; }
-    .ratings-detail { 
-    	.talk-title, .talk-speaker, .talk-rating { *{ text-align: left;} }
-    }
-    .hero { font-size: 2rem; }
-    .ratings-detail .talk-title { font-size: 2rem; }
-    .ratings-detail .talk-speaker { 
-    	min-width: auto;
-    	max-width: none; 
-    }
+    // .flexible-component { 
+    // 	width: 100%; 
+    // 	margin: 1rem 0;
+    // }
+    // .flexible-column { height: auto; }
+    // .ratings-detail .flexible-component { 
+    // 	width: 100%; 
+    // 	margin: 0 1rem;
+    // 	padding: 1rem 0;
+    // }
+    // .flexible-component.talk-speaker { 
+    // 	background-color: transparent;
+    // 	height: auto;
+    // 	width: auto;
+    // 	padding: 0;
+    // 	border-radius: 0;
+    // }
+    // .flexible-column { text-align: center; }
+    // .ratings-detail { 
+    // 	.talk-title, .talk-speaker, .talk-rating { *{ text-align: left;} }
+    // }
+    // .hero { font-size: 2rem; }
+    // .ratings-detail .talk-title { font-size: 2rem; }
+    // .ratings-detail .talk-speaker { 
+    // 	min-width: auto;
+    // 	max-width: none; 
+    // }
 }
