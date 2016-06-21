@@ -7,6 +7,8 @@ import CustomRating from 'components/custom-rating'
 import { recalculateAverage } from 'helpers/rating-calculator'
 import Progress from 'components/progress'
 
+import "stylesheets/common.scss"
+
 class TalkDetails extends Component {
   constructor(props) {
     super(props)
@@ -62,7 +64,7 @@ class TalkDetails extends Component {
     return (
       <div>
       <Progress loading={this.state.loading} />
-      <div className="flexible-box ratings-detail">
+      <div className={`flexible-box ratings-detail ${this.state.loading ? 'hidden' : ''}`}>
         <div className="flexible-component talk-title">
           <div className="flexible-column">
             <h1 className="talk-title">{ this.state.talk.name }</h1>
