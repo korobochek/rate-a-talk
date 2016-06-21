@@ -22,6 +22,7 @@ h1, h2, h3, h4, h5, h6 {
 	flex-wrap: wrap;
 }
 .flexible-component { 
+	padding: 1rem 0;
 	flex-grow: 1;
 	background: material-color('grey', '100');
 }
@@ -34,10 +35,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 // EXCEPTIONS and GROUPS
-.flexible-component { padding: 1rem 0; }
 .flexible-box.date-title { 
 	justify-content: space-between; 
 	-webkit-justify-content: space-between;
+}
+
+.talk-details {
+	.talk-speaker { margin-bottom: 0; }
+	.flexible-component { padding: 1rem; }
 }
 
 .monday { background-color: material-color('pink','600');}
@@ -54,13 +59,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 .hero { 
 	font-size: 3rem; 
-	flex: 1;
 }
 .hero, .subtitle { 
 	background-color: material-color('cyan','400');
 	padding: 1rem;
 	font-weight: 100;
 	color: white;
+	flex: 1;
 }
 
 // RATINGS
