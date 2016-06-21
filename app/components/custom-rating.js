@@ -44,8 +44,8 @@ class CustomRating extends Component {
 
   render() {
     return (
-      <div>
-        <div className="stars">
+      <div className="stars">
+        <div>
           <Rating
             empty={'fa fa-star-o'}
             full={'fa fa-star'}
@@ -53,7 +53,7 @@ class CustomRating extends Component {
             initialRate={this.props.initialRate}
             onClick={this.onStarRatingPress.bind(this)}
             readonly={this.state.readonly}
-          />
+          />  
         </div>
         { this.state.success ? (
           <div className="thank-you-hero">Thank you</div>

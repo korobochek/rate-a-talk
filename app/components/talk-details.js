@@ -87,7 +87,9 @@ class TalkDetails extends Component {
         </div>
         <div className="flexible-box">
           <div className="flexible-component">
-              <div className="tap-to-rate">Tap to rate</div>
+              Tap to rate
+          </div>
+          <div className="flexible-component">
               <CustomRating readonly={false} initialRate={0} talkId={this.state.talk.id} />
           </div>
         </div>
