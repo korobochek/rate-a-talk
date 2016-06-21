@@ -57,13 +57,13 @@ export default class TalkDetails extends Component {
           </div>
         </div>
         {this.state.talk.speakers ?
-          (<div className="flexible-component">
+          (<div className="flexible-component talk-speaker">
             <div className="flexible-column">
               <h2>{ this.state.talk.speakers }</h2>
             </div>
            </div>) : null
         }
-        <div className="flexible-component">
+        <div className="flexible-component talk-rating">
           <div className="flexible-column">
             <h2>Current Rating is</h2>
             <div className="hero-rating">{this.state.talk.averageRating}/5</div>

@@ -5,16 +5,14 @@ body {
 	background-color: material-color('pink', '200');
 	font-family: "Roboto", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
 	font-weight: 300;
-	font-size: 1em;
 	margin: 0;
 }
 
 h1, h2, h3, h4, h5, h6 { 
 	font-weight: 100; 
 	margin: 0;
-	padding: 0.5em;
+	padding: 0.5rem;
 }
-
 
 .flexible-box { 
 	display: -webkit-flex;
@@ -28,36 +26,35 @@ h1, h2, h3, h4, h5, h6 {
 }
 .flexible-component { 
 	flex-grow: 1;
-	width: 30%;
-	margin: 0.5em;
-	padding: 0.5em;
+	width: 25%;
+	margin: 1.5rem;
+	padding: 1.5rem;
 	background: material-color('grey', '100');
-	// &:hover { background-color: material-color('lime', '200'); }
 }
 .flexible-title { 
 	width: 100%;
 	text-align: center;
 }
 .flexible-column { 
-	height: 20em;
+	height: 20rem;
     display: flex;
     display: -webkit-flex;
     -webkit-flex-direction: column;
     flex-direction: column;
     justify-content: space-between;
     }
-.annotation { margin-top: 2em; }
+.annotation { margin-top: 2rem; }
 .stars { 
 	color: material-color('cyan', '600');
-	margin-top: 0.5em;
-	font-size: 2em; 
+	margin-top: 0.5rem;
+	font-size: 2rem; 
 	text-align: center;
 	display: block;
 }
 .hero { 
 	background-color: material-color('cyan','400');
-	font-size: 4em;
-	padding: 1em;
+	font-size: 4rem;
+	padding: 1rem;
 	font-weight: 100;
 	color: white;
 }
@@ -65,12 +62,11 @@ h1, h2, h3, h4, h5, h6 {
 	background-color: material-color('cyan','400');
 	font-weight: 300;
 	color: white;
-	padding-bottom: 3em;
+	padding-bottom: 3rem;
 }
 .hero-rating { 
-	font-size: 8em;
+	font-size: 8rem;
 	font-weight: 100;
-	color: material-color('pink','800');
 }
 .talk-title { 
 	font-weight: 500;
@@ -81,42 +77,42 @@ h1, h2, h3, h4, h5, h6 {
 	color: white;
 	h2 { 
 		border-bottom: 3px solid white; 
-		padding: 1em;
-		margin-bottom: 1em;
+		padding: 1rem;
+		margin-bottom: 1rem;
 	}
 }
 .button { 
 	color: black;
 	text-align: center;
-	margin: 1em;
-	padding: 15px;
+	margin: 1rem;
+	padding: 1rem;
 	border: none;
-	border-radius: 5em;
-	font-size: 15pt;
+	border-radius: 5rem;
+	font-size: 1rem;
 	font-weight: 500;
 	text-decoration: none;
 	background-color: material-color('lime', '300');
 	&:hover { background-color: material-color('lime', '500'); }
 }
 .thank-you-hero {
-	font-size: 2em;
+	font-size: 2rem;
 	font-weight: 800;
 	text-align: center;
-	padding: 1em;
+	padding: 1rem;
 }
 
 .tap-to-rate { 
 	@extend .hero-rating;
 	text-align: center;
-	font-size: 2em;
+	font-size: 2rem;
 }
 .comments { 
 	border: none;
-	height: 17.5em;
-	margin: 1em;
-	padding: 1em;
-	border-radius: 0.5em;
-	box-shadow: inset 0em 0em 0.5em 0.5em material-color('grey','300');
+	height: 17.5rem;
+	margin: 1rem;
+	padding: 1rem;
+	border-radius: 0.5rem;
+	box-shadow: inset 0rem 0rem 0.5rem 0.5rem material-color('grey','300');
 }
 
 .ratings-detail {
@@ -124,8 +120,8 @@ h1, h2, h3, h4, h5, h6 {
 	text-align: center;
 	.flexible-column { justify-content: center; }
 	.flexible-component { 
-		padding: 2em;
-		margin: 2em;
+		padding: 2rem;
+		margin: 2rem;
 		width: 20%;
 	}
 	.talk-title { 
@@ -134,17 +130,29 @@ h1, h2, h3, h4, h5, h6 {
 		font-weight: 800;
 		text-align: left;
 	}
+	.talk-speaker { 
+		height: 300px;
+		min-width: 200px;
+		max-width: 300px;
+		border-radius: 10000rem;
+		background-color: material-color('pink','400');
+		color: white;
+	}
+	.talk-rating { 
+		background-color: transparent;
+		color: white;
+	}
 }
 
 @media screen and (max-width: 800px) {
     .flexible-component { 
     	width: 100%; 
-    	margin: 1em;
+    	margin: 1rem;
     }
     .ratings-detail .flexible-component { 
     	width: 100%; 
-    	margin: 1em;
+    	margin: 1rem;
     }
     .flexible-column { text-align: center; }
-    .hero { font-size: 2em; }
+    .hero { font-size: 2rem; }
 }
