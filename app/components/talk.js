@@ -13,8 +13,8 @@ export default class Talk extends Component {
   render() {
     return (
       <div className="flexible-column">
-        <h3 className="talk-title">{this.props.talk.name}</h3>
-        { this.props.talk.speakers ? (<h5>{this.props.talk.speakers}</h5>) : null }
+        <h2 className="talk-title">{this.props.talk.name}</h2>
+        { this.props.talk.speakers ? (<h2 className="talk-speaker">{this.props.talk.speakers}</h2>) : null }
         <div>
         <div className="annotation">
           Average rating so far:

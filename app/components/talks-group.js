@@ -25,8 +25,9 @@ export default class TalksGroup extends Component {
   render() {
     const grouping = this.props.grouping
     const yesterdayTalksId = grouping === 'Monday 20 June 2016' ? 'yesterday-talks' : ''
+    const talksGroupClass = yesterdayTalksId === '' ? 'tuesday' : 'monday'
     return (
-      <div>
+      <div className={talksGroupClass}>
         <div className="flexible-box date-title" onClick={event => { this.toggleMondaySessions() }}>
           <h2>{grouping}</h2>
           { yesterdayTalksId != '' ? <i id="toggle" className="fa fa-angle-down"></i> : null}

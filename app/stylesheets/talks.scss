@@ -42,7 +42,9 @@ h1, h2, h3, h4, h5, h6 {
     -webkit-flex-direction: column;
     flex-direction: column;
     justify-content: space-between;
-    }
+}
+.monday { background-color: material-color('pink','600');}
+.tuesday { background-color: material-color('pink','700');}
 .annotation { margin-top: 2rem; }
 .stars { 
 	color: material-color('cyan', '600');
@@ -73,7 +75,6 @@ h1, h2, h3, h4, h5, h6 {
 	text-transform: uppercase;
 }
 .date-title { 
-	background-color: material-color('pink', '300');
 	color: white;
 	h2 { 
 		border-bottom: 3px solid white; 
@@ -100,7 +101,7 @@ h1, h2, h3, h4, h5, h6 {
 	text-align: center;
 	padding: 1rem;
 }
-
+.talk-speaker { font-weight: 100; }
 .tap-to-rate { 
 	@extend .hero-rating;
 	text-align: center;
@@ -129,8 +130,10 @@ h1, h2, h3, h4, h5, h6 {
 		color: white;
 		font-weight: 800;
 		text-align: left;
+		font-size: 3rem;
 	}
 	.talk-speaker { 
+		font-size: 2rem;
 		height: 300px;
 		min-width: 200px;
 		max-width: 300px;
@@ -147,12 +150,29 @@ h1, h2, h3, h4, h5, h6 {
 @media screen and (max-width: 800px) {
     .flexible-component { 
     	width: 100%; 
-    	margin: 1rem;
+    	margin: 1rem 0;
     }
+    .flexible-column { height: auto; }
     .ratings-detail .flexible-component { 
     	width: 100%; 
-    	margin: 1rem;
+    	margin: 0 1rem;
+    	padding: 1rem 0;
+    }
+    .flexible-component.talk-speaker { 
+    	background-color: transparent;
+    	height: auto;
+    	width: auto;
+    	padding: 0;
+    	border-radius: 0;
     }
     .flexible-column { text-align: center; }
+    .ratings-detail { 
+    	.talk-title, .talk-speaker, .talk-rating { *{ text-align: left;} }
+    }
     .hero { font-size: 2rem; }
+    .ratings-detail .talk-title { font-size: 2rem; }
+    .ratings-detail .talk-speaker { 
+    	min-width: auto;
+    	max-width: none; 
+    }
 }
