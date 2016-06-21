@@ -2,13 +2,14 @@ import $ from 'jquery'
 import _ from 'lodash'
 import React, { Component } from 'react'
 
+import Progress from 'components/progress'
 import Talk from 'components/talk'
 import TalksGroup from 'components/talks-group'
 
 export default class TalksList extends Component {
   constructor(props) {
     super(props)
-    this.state = { talks: [] }
+    this.state = { talks: [], loading: true }
   }
 
   componentWillMount() {
@@ -17,7 +18,7 @@ export default class TalksList extends Component {
       url: '/talks',
       contentType: 'application/json',
       dataType: 'json',
-      success: responseBody => this.setState({ talks: responseBody }),
+      success: responseBody => this.setState({ talks: responseBody, loading: false }),
       error: xhr => window.location = '/500.html'
     })
   }
@@ -27,7 +28,7 @@ export default class TalksList extends Component {
   }
 
   renderGroupedTalks(day, talks) {
-    return (<div className="flexible-box" key={Math.random()}>day</div>)
+    return (<div className="flexible-box" key={ Math.random() }>day</div>)
   }
 
   render() {
@@ -37,6 +38,7 @@ export default class TalksList extends Component {
         <div className="flexible-box">
           <h1 className="hero flexible-title">Agile Australia 2016</h1>
         </div>
+        <Progress loading={this.state.loading} />
         <div className="flexible-box">
           <h2 className="hero-2 flexible-title">view and rate talks</h2>
         </div>

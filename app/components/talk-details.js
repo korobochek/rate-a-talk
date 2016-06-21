@@ -5,11 +5,12 @@ import { connect } from 'react-redux'
 
 import CustomRating from 'components/custom-rating'
 import { recalculateAverage } from 'helpers/rating-calculator'
+import Progress from 'components/progress'
 
 class TalkDetails extends Component {
   constructor(props) {
     super(props)
-    this.state = { talk: {}, comment: '', success: false }
+    this.state = { talk: {}, comment: '', success: false, loading: true }
   }
 
   componentWillMount() {
@@ -18,7 +19,7 @@ class TalkDetails extends Component {
       url: `/talks/${this.props.params.talkId}`,
       contentType: 'application/json',
       dataType: 'json',
-      success: responseBody => this.setState({ talk: responseBody }),
+      success: responseBody => this.setState({ talk: responseBody, loading: false }),
       error: xhr => window.location = '/500.html'
     })
   }
@@ -60,6 +61,7 @@ class TalkDetails extends Component {
     const commentsClass = this.state.success ? "comments cannot-input" : "comments"
     return (
       <div className="flexible-box ratings-detail">
+        <Progress loading={this.state.loading} />
         <div className="flexible-component talk-title">
           <div className="flexible-column">
             <h1 className="talk-title">{ this.state.talk.name }</h1>
