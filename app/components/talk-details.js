@@ -4,6 +4,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import CustomRating from 'components/custom-rating'
+import { recalculateAverage } from 'helpers/rating-calculator'
 
 class TalkDetails extends Component {
   constructor(props) {
@@ -45,12 +46,6 @@ class TalkDetails extends Component {
     })
   }
 
-  recalculateAverage(ratings, newValue) {
-    const coll = _.map(ratings, 'rating')
-    coll.push(newValue.rating)
-    return Math.round(_.sum(coll)/coll.length)
-  }
-
   hasRating(userRating, talkId) {
     return userRating.rating != 0 && talkId == userRating.talkId
   }
@@ -58,9 +53,7 @@ class TalkDetails extends Component {
   render() {
     const savedRatings = _.filter(this.state.talk.ratings, rating => rating.rating && rating.rating != 0)
     const ratingsCount = this.hasRating(this.props.userRating, this.state.talk.id) ? savedRatings.length + 1 : savedRatings.length
-    const averageRating = this.hasRating(this.props.userRating, this.state.talk.id) ?
-                          this.recalculateAverage(savedRatings, this.props.userRating) :
-                          this.state.talk.averageRating
+    const averageRating = recalculateAverage(this.state.talk, this.props.userRating)
     const comments = _.map(_.filter(this.state.talk.ratings,
                                     rating => rating.comment && rating.comment != 0),
                            rating => rating.comment)
