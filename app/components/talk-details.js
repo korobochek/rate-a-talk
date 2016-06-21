@@ -104,7 +104,7 @@ class TalkDetails extends Component {
               disabled={ this.state.comment === '' || this.state.success }>
               Save
             </button>
-            {this.state.success ? <div className="hero-2">Thank you</div> : null}
+            {this.state.success ? <div>Thank you</div> : null}
           </div>
         </div>
         <div className="flexible-component">

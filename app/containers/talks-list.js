@@ -43,7 +43,7 @@ export default class TalksList extends Component {
             <h1 className="hero flexible-title">Agile Australia 2016</h1>
           </div>
           <div className="flexible-box">
-            <h2 className="hero-2 flexible-title">view and rate talks</h2>
+            <h2 className="flexible-title">view and rate talks</h2>
           </div>
           <TalksGroup talks={groupedTalks['Monday 20 June 2016']} grouping={'Monday 20 June 2016'} />
           <TalksGroup talks={groupedTalks['Tuesday 21 June 2016']} grouping={'Tuesday 21 June 2016'} />

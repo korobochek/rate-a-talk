@@ -25,19 +25,23 @@ h1, h2, h3, h4, h5, h6 {
 }
 .flexible-component { 
 	flex-grow: 1;
-	width: 25%;
 	min-width: 24rem;
 	// margin: 1.5rem;
-	padding: 1.5rem;
-	// background: material-color('grey', '100');
+	background: material-color('grey', '100');
 }
 .flexible-column { 
-	height: 20rem;
     display: flex;
     display: -webkit-flex;
     -webkit-flex-direction: column;
     flex-direction: column;
     justify-content: space-between;
+}
+
+// EXCEPTIONS and GROUPS
+.flexible-component, .date-title { padding: 1rem 0; }
+.flexible-box.date-title { 
+	justify-content: space-between; 
+	-webkit-justify-content: space-between;
 }
 
 .monday { background-color: material-color('pink','600');}
@@ -48,14 +52,25 @@ h1, h2, h3, h4, h5, h6 {
 	width: 100%;
 	text-align: center;
 }
-.date-title { color: white;}
+.date-title { 
+	color: white;
+}
+.talk-title { 
+	font-weight: 800;
+	text-transform: uppercase;
+}
+
+// RATINGS
+
+.ratings { justify-content: space-between; }
+
+// TALKS
+.talk-title, .talk-speaker { padding: 1rem; }
+.talk-speaker { font-weight: 100; }
 
 .stars { 
 	color: material-color('cyan', '600');
-	margin-top: 0.5rem;
 	font-size: 2rem; 
-	text-align: center;
-	display: block;
 }
 
 .hero { 
@@ -65,31 +80,20 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: 100;
 	color: white;
 }
-.hero-2 { 
-	background-color: material-color('cyan','400');
-	font-weight: 300;
-	color: white;
-	padding-bottom: 3rem;
-}
 .hero-rating { 
 	font-size: 8rem;
 	font-weight: 100;
 }
-.talk-title { 
-	font-weight: 500;
-	text-transform: uppercase;
-}
+
 .button { 
 	color: black;
 	text-align: center;
-	margin: 1rem;
 	padding: 1rem;
 	border: none;
-	border-radius: 5rem;
 	font-size: 1rem;
 	font-weight: 500;
 	text-decoration: none;
-	background-color: material-color('lime', '300');
+	background-color: material-color('lime', '500');
 	&:hover { background-color: material-color('lime', '500'); }
 }
 .thank-you-hero {
@@ -98,7 +102,6 @@ h1, h2, h3, h4, h5, h6 {
 	text-align: center;
 	padding: 1rem;
 }
-.talk-speaker { font-weight: 100; }
 .tap-to-rate { 
 	@extend .hero-rating;
 	text-align: center;
@@ -114,34 +117,34 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .ratings-detail {
-	background-color: material-color('pink','600');
-	text-align: center;
-	.flexible-column { justify-content: center; }
-	.flexible-component { 
-		padding: 2rem;
-		margin: 2rem;
-		width: 20%;
-	}
-	.talk-title { 
-		background-color: transparent;
-		color: white;
-		font-weight: 800;
-		text-align: left;
-		font-size: 3rem;
-	}
-	.talk-speaker { 
-		font-size: 2rem;
-		height: 300px;
-		min-width: 200px;
-		max-width: 300px;
-		border-radius: 10000rem;
-		background-color: material-color('pink','400');
-		color: white;
-	}
-	.talk-rating { 
-		background-color: transparent;
-		color: white;
-	}
+	// background-color: material-color('pink','600');
+	// text-align: center;
+	// .flexible-column { justify-content: center; }
+	// .flexible-component { 
+	// 	padding: 2rem;
+	// 	margin: 2rem;
+	// 	width: 20%;
+	// }
+	// .talk-title { 
+	// 	background-color: transparent;
+	// 	color: white;
+	// 	font-weight: 800;
+	// 	text-align: left;
+	// 	font-size: 3rem;
+	// }
+	// .talk-speaker { 
+	// 	font-size: 2rem;
+	// 	height: 300px;
+	// 	min-width: 200px;
+	// 	max-width: 300px;
+	// 	border-radius: 10000rem;
+	// 	background-color: material-color('pink','400');
+	// 	color: white;
+	// }
+	// .talk-rating { 
+	// 	background-color: transparent;
+	// 	color: white;
+	// }
 }
 
 @media screen and (max-width: 800px) {

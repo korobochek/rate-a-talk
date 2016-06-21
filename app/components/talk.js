@@ -19,7 +19,7 @@ class Talk extends Component {
         <h2 className="talk-title">{this.props.talk.name}</h2>
         { this.props.talk.speakers ? (<h2 className="talk-speaker">{this.props.talk.speakers}</h2>) : null }
         <div>
-          <div>
+          <div className="flexible-box ratings">
             Average rating so far: {recalculateAverage(this.props.talk, this.props.userRating)}
           </div>
           <div>
