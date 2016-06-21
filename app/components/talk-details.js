@@ -60,8 +60,9 @@ class TalkDetails extends Component {
                            rating => rating.comment)
     const commentsClass = this.state.success ? "comments cannot-input" : "comments"
     return (
+      <div>
+      <Progress loading={this.state.loading} />
       <div className="flexible-box ratings-detail">
-        <Progress loading={this.state.loading} />
         <div className="flexible-component talk-title">
           <div className="flexible-column">
             <h1 className="talk-title">{ this.state.talk.name }</h1>
@@ -110,6 +111,7 @@ class TalkDetails extends Component {
             { comments.map(comment => (<div key={Math.random()}>{comment}</div>)) }
           </div>
         </div>
+      </div>
       </div>
     )
   }

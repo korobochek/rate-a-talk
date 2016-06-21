@@ -6,6 +6,8 @@ import Progress from 'components/progress'
 import Talk from 'components/talk'
 import TalksGroup from 'components/talks-group'
 
+import 'stylesheets/common.scss'
+
 export default class TalksList extends Component {
   constructor(props) {
     super(props)
@@ -35,15 +37,17 @@ export default class TalksList extends Component {
     const groupedTalks = this.talksGroupedByDate(this.state.talks)
     return (
       <div>
-        <div className="flexible-box">
-          <h1 className="hero flexible-title">Agile Australia 2016</h1>
-        </div>
         <Progress loading={this.state.loading} />
-        <div className="flexible-box">
-          <h2 className="hero-2 flexible-title">view and rate talks</h2>
+        <div className={ this.state.loading ? 'hidden' : ''}>
+          <div className="flexible-box">
+            <h1 className="hero flexible-title">Agile Australia 2016</h1>
+          </div>
+          <div className="flexible-box">
+            <h2 className="hero-2 flexible-title">view and rate talks</h2>
+          </div>
+          <TalksGroup talks={groupedTalks['Monday 20 June 2016']} grouping={'Monday 20 June 2016'} />
+          <TalksGroup talks={groupedTalks['Tuesday 21 June 2016']} grouping={'Tuesday 21 June 2016'} />
         </div>
-        <TalksGroup talks={groupedTalks['Monday 20 June 2016']} grouping={'Monday 20 June 2016'} />
-        <TalksGroup talks={groupedTalks['Tuesday 21 June 2016']} grouping={'Tuesday 21 June 2016'} />
       </div>
     )
   }
