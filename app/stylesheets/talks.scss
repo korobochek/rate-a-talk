@@ -20,13 +20,9 @@ h1, h2, h3, h4, h5, h6 {
 	flex-direction: row;
 	-webkit-flex-wrap: wrap;
 	flex-wrap: wrap;
-	-webkit-justify-content: center;
-	justify-content: center;
 }
 .flexible-component { 
 	flex-grow: 1;
-	min-width: 24rem;
-	// margin: 1.5rem;
 	background: material-color('grey', '100');
 }
 .flexible-column { 
@@ -38,7 +34,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 // EXCEPTIONS and GROUPS
-.flexible-component, .date-title { padding: 1rem 0; }
+.flexible-component { padding: 1rem 0; }
 .flexible-box.date-title { 
 	justify-content: space-between; 
 	-webkit-justify-content: space-between;
@@ -48,42 +44,51 @@ h1, h2, h3, h4, h5, h6 {
 .tuesday { background-color: material-color('pink','700');}
 
 // TITLES
-.flexible-title { 
-	width: 100%;
-	text-align: center;
-}
 .date-title { 
 	color: white;
+	padding: 0.5rem 1rem;
 }
 .talk-title { 
 	font-weight: 800;
 	text-transform: uppercase;
 }
-
-// RATINGS
-
-.ratings { justify-content: space-between; }
-
-// TALKS
-.talk-title, .talk-speaker { padding: 1rem; }
-.talk-speaker { font-weight: 100; }
-
-.stars { 
-	color: material-color('cyan', '600');
-	font-size: 2rem; 
-}
-
 .hero { 
+	font-size: 3rem; 
+	flex: 1;
+}
+.hero, .subtitle { 
 	background-color: material-color('cyan','400');
-	font-size: 4rem;
 	padding: 1rem;
 	font-weight: 100;
 	color: white;
 }
-.hero-rating { 
-	font-size: 8rem;
-	font-weight: 100;
+
+// RATINGS
+
+.ratings { 
+	justify-content: space-between; 
+	padding: 1rem 0 1rem 1rem;
 }
+.hero-rating { 
+	font-size: 4rem;
+	font-weight: 100;
+	padding: 0 1rem;
+}
+
+// TALKS
+.talk-title { padding: 0 1rem; }
+.talk-speaker { 
+	font-weight: 100; 
+	margin-bottom: 1rem;
+}
+
+.stars { 
+	color: material-color('cyan', '600');
+	font-size: 2rem; 
+	text-align: right;
+}
+
+// INTERACTION
 
 .button { 
 	color: black;
@@ -93,86 +98,23 @@ h1, h2, h3, h4, h5, h6 {
 	font-size: 1rem;
 	font-weight: 500;
 	text-decoration: none;
-	background-color: material-color('lime', '500');
-	&:hover { background-color: material-color('lime', '500'); }
+	background-color: material-color('light-green', '400');
+	&:hover { background-color: material-color('light-green', '200'); }
 }
+
 .thank-you-hero {
 	font-size: 2rem;
 	font-weight: 800;
-	text-align: center;
-	padding: 1rem;
 }
-.tap-to-rate { 
-	@extend .hero-rating;
-	text-align: center;
-	font-size: 2rem;
-}
+
 .comments { 
 	border: none;
-	height: 17.5rem;
+	height: 10rem;
 	margin: 1rem;
 	padding: 1rem;
-	border-radius: 0.5rem;
 	box-shadow: inset 0rem 0rem 0.5rem 0.5rem material-color('grey','300');
 }
 
-.ratings-detail {
-	// background-color: material-color('pink','600');
-	// text-align: center;
-	// .flexible-column { justify-content: center; }
-	// .flexible-component { 
-	// 	padding: 2rem;
-	// 	margin: 2rem;
-	// 	width: 20%;
-	// }
-	// .talk-title { 
-	// 	background-color: transparent;
-	// 	color: white;
-	// 	font-weight: 800;
-	// 	text-align: left;
-	// 	font-size: 3rem;
-	// }
-	// .talk-speaker { 
-	// 	font-size: 2rem;
-	// 	height: 300px;
-	// 	min-width: 200px;
-	// 	max-width: 300px;
-	// 	border-radius: 10000rem;
-	// 	background-color: material-color('pink','400');
-	// 	color: white;
-	// }
-	// .talk-rating { 
-	// 	background-color: transparent;
-	// 	color: white;
-	// }
-}
+.ratings-detail {}
 
-@media screen and (max-width: 800px) {
-    // .flexible-component { 
-    // 	width: 100%; 
-    // 	margin: 1rem 0;
-    // }
-    // .flexible-column { height: auto; }
-    // .ratings-detail .flexible-component { 
-    // 	width: 100%; 
-    // 	margin: 0 1rem;
-    // 	padding: 1rem 0;
-    // }
-    // .flexible-component.talk-speaker { 
-    // 	background-color: transparent;
-    // 	height: auto;
-    // 	width: auto;
-    // 	padding: 0;
-    // 	border-radius: 0;
-    // }
-    // .flexible-column { text-align: center; }
-    // .ratings-detail { 
-    // 	.talk-title, .talk-speaker, .talk-rating { *{ text-align: left;} }
-    // }
-    // .hero { font-size: 2rem; }
-    // .ratings-detail .talk-title { font-size: 2rem; }
-    // .ratings-detail .talk-speaker { 
-    // 	min-width: auto;
-    // 	max-width: none; 
-    // }
-}
+@media screen and (max-width: 800px) {}

@@ -60,60 +60,55 @@ class TalkDetails extends Component {
     const comments = _.map(_.filter(this.state.talk.ratings,
                                     rating => rating.comment && rating.comment != 0),
                            rating => rating.comment)
-    const commentsClass = this.state.success ? "comments cannot-input" : "comments"
     return (
       <div>
-      <Progress loading={this.state.loading} />
-      <div className={`flexible-box ratings-detail ${this.state.loading ? 'hidden' : ''}`}>
-        <div className="flexible-component talk-title">
-          <div className="flexible-column">
-            <h1 className="talk-title">{ this.state.talk.name }</h1>
+        <Progress loading={this.state.loading} />
+        <div className={`flexible-box ratings-detail ${this.state.loading ? 'hidden' : ''}`}>
+          <div className="flexible-component talk title">
+              <h1 className="talk-title">{ this.state.talk.name }</h1>
           </div>
-        </div>
-        {this.state.talk.speakers ?
-          (<div className="flexible-component talk-speaker">
-            <div className="flexible-column">
-              <h2>{ this.state.talk.speakers }</h2>
+          {this.state.talk.speakers ?
+            (<div className="flexible-box talk-speaker">
+              <div className="flexible-component">
+                <h2>{ this.state.talk.speakers }</h2>
+              </div>
+             </div>) : null
+          }
+          <div className="flexible-box talk-rating">
+            <div className="flexible-component">
+              <h2>Current Rating is</h2>
+              <div className="hero-rating">{averageRating}/5</div>
+              { this.state.talk.ratings ?
+                (<h2>with {ratingsCount} votes</h2>) : null
+              }
             </div>
-           </div>) : null
-        }
-        <div className="flexible-component talk-rating">
-          <div className="flexible-column">
-            <h2>Current Rating is</h2>
-            <div className="hero-rating">{averageRating}/5</div>
-            { this.state.talk.ratings ?
-              (<h2>with {ratingsCount} votes</h2>) : null
-            }
           </div>
-        </div>
-        <div className="flexible-component">
-          <div className="flexible-column">
-            <div className="tap-to-rate">Tap to rate</div>
-            <CustomRating readonly={false} initialRate={0} talkId={this.state.talk.id} />
+          <div className="flexible-box">
+            <div className="flexible-component">
+              <div className="tap-to-rate">Tap to rate</div>
+              <CustomRating readonly={false} initialRate={0} talkId={this.state.talk.id} />
+            </div>
           </div>
-        </div>
-        <div className="flexible-component">
-          <div className="flexible-column">
+          <div className="flexible-box">
             <textarea
-            className={commentsClass}
+            className={`comments flexible-component ${this.state.success ? "cannot-input" : ""}`}
             onChange={event => this.setState(_.merge(this.state, { comment: event.target.value })) }
             />
             <button
-              className="button"
+              className="button flexible-component"
               onClick={ event => this.saveComment(this.state.talk.id, this.state.comment) }
               disabled={ this.state.comment === '' || this.state.success }>
               Save
             </button>
             {this.state.success ? <div>Thank you</div> : null}
           </div>
-        </div>
-        <div className="flexible-component">
-          <div className="flexible-column">
-            <h2>Comments so far</h2>
-            { comments.map(comment => (<div key={Math.random()}>{comment}</div>)) }
+          <div className="flexible-box">
+            <div className="flexible-component">
+              <h2>Comments so far</h2>
+              { comments.map(comment => (<div key={Math.random()}>{comment}</div>)) }
+            </div>
           </div>
         </div>
-      </div>
       </div>
     )
   }

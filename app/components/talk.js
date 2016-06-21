@@ -17,14 +17,19 @@ class Talk extends Component {
     return (
       <div className="flexible-column">
         <h2 className="talk-title">{this.props.talk.name}</h2>
-        { this.props.talk.speakers ? (<h2 className="talk-speaker">{this.props.talk.speakers}</h2>) : null }
         <div>
           <div className="flexible-box ratings">
-            Average rating so far: {recalculateAverage(this.props.talk, this.props.userRating)}
+            <div>
+              { this.props.talk.speakers ? (<h2 className="talk-speaker">{this.props.talk.speakers}</h2>) : null }
+              Average rating so far: 
+            </div>
+            <div className="hero-rating">{recalculateAverage(this.props.talk, this.props.userRating)}</div>
           </div>
           <div>
-            <div>Rate: </div>
-            <CustomRating readonly={false} initialRate={0} talkId={this.props.talk.id} />
+            <div className="flexible-box ratings">
+              <div>Rate: </div>
+              <div><CustomRating readonly={false} initialRate={0} talkId={this.props.talk.id} /></div>
+            </div>
           </div>
         </div>
         <Link className="button" to={`/details/${this.props.talk.id}`}>View and leave feedback</Link>
