@@ -105,6 +105,11 @@ h1, h2, h3, h4, h5, h6 {
 	padding: 1em;
 }
 
+.tap-to-rate { 
+	@extend .hero-rating;
+	text-align: center;
+	font-size: 2em;
+}
 .comments { 
 	border: none;
 	height: 17.5em;
@@ -114,8 +119,29 @@ h1, h2, h3, h4, h5, h6 {
 	box-shadow: inset 0em 0em 0.5em 0.5em material-color('grey','300');
 }
 
+.ratings-detail {
+	background-color: material-color('pink','600');
+	text-align: center;
+	.flexible-column { justify-content: center; }
+	.flexible-component { 
+		padding: 2em;
+		margin: 2em;
+		width: 20%;
+	}
+	.talk-title { 
+		background-color: transparent;
+		color: white;
+		font-weight: 800;
+		text-align: left;
+	}
+}
+
 @media screen and (max-width: 800px) {
     .flexible-component { 
+    	width: 100%; 
+    	margin: 1em;
+    }
+    .ratings-detail .flexible-component { 
     	width: 100%; 
     	margin: 1em;
     }

@@ -50,25 +50,33 @@ export default class TalkDetails extends Component {
                            rating => rating.comment)
     const commentsClass = this.state.success ? "comments cannot-input" : "comments"
     return (
-      <div className="flexible-box">
-        <div className="flexible-component">
-          <h1 className="talk-title">{ this.state.talk.name }</h1>
+      <div className="flexible-box ratings-detail">
+        <div className="flexible-component talk-title">
+          <div className="flexible-column">
+            <h1 className="talk-title">{ this.state.talk.name }</h1>
+          </div>
         </div>
         {this.state.talk.speakers ?
           (<div className="flexible-component">
-            <h2>{ this.state.talk.speakers }</h2>
+            <div className="flexible-column">
+              <h2>{ this.state.talk.speakers }</h2>
+            </div>
            </div>) : null
         }
         <div className="flexible-component">
-          <h2>Current Rating is</h2>
-          <div className="hero-rating">{this.state.talk.averageRating}/5</div>
-          { this.state.talk.ratings ?
-            (<div className="flexible-component">with {ratingsCount} votes</div>) : null
-          }
+          <div className="flexible-column">
+            <h2>Current Rating is</h2>
+            <div className="hero-rating">{this.state.talk.averageRating}/5</div>
+            { this.state.talk.ratings ?
+              (<h2>with {ratingsCount} votes</h2>) : null
+            }
+          </div>
         </div>
         <div className="flexible-component">
-          <div className="hero-rating">Tap to rate</div>
-          <CustomRating readonly={false} initialRate={0} talkId={this.state.talk.id} />
+          <div className="flexible-column">
+            <div className="tap-to-rate">Tap to rate</div>
+            <CustomRating readonly={false} initialRate={0} talkId={this.state.talk.id} />
+          </div>
         </div>
         <div className="flexible-component">
           <div className="flexible-column">
@@ -86,8 +94,10 @@ export default class TalkDetails extends Component {
           </div>
         </div>
         <div className="flexible-component">
-          <h2>Comments so far</h2>
-          { comments.map(comment => (<div key={Math.random()}>{comment}</div>)) }
+          <div className="flexible-column">
+            <h2>Comments so far</h2>
+            { comments.map(comment => (<div key={Math.random()}>{comment}</div>)) }
+          </div>
         </div>
       </div>
     )
