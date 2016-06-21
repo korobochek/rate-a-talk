@@ -2,19 +2,21 @@ import $ from 'jquery'
 import _ from 'lodash'
 import React, { Component } from 'react'
 import Rating from 'react-rating'
+import { connect } from 'react-redux'
 
 import 'stylesheets/talks.scss'
+import { userRatingAction } from 'redux-stuff/rating-reducer'
 
-export default class CustomRating extends Component {
+class CustomRating extends Component {
   static propTypes = {
     readonly: React.PropTypes.bool,
     initialRate: React.PropTypes.number,
-    talkId: React.PropTypes.number
+    talkId: React.PropTypes.number,
+    userRating: React.PropTypes.object
   }
 
   constructor(props) {
     super(props)
-
     this.state = { success: false, readonly: this.props.readonly }
   }
 
@@ -33,6 +35,7 @@ export default class CustomRating extends Component {
         if (xhr.status != 201) {
           window.location = '/500.html'
         } else {
+          this.props.dispatch(userRatingAction(value, this.props.talkId))
           this.setState({ success: true, readonly: true })
         }
       }
@@ -59,3 +62,13 @@ export default class CustomRating extends Component {
     )
   }
 }
+
+
+function mapStateToProps(state) {
+  return {
+    userRating: state.userRating
+  }
+}
+
+export default connect(mapStateToProps)(CustomRating)
+

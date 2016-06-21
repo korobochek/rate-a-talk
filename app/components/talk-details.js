@@ -1,9 +1,11 @@
 import $ from 'jquery'
 import _ from 'lodash'
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+
 import CustomRating from 'components/custom-rating'
 
-export default class TalkDetails extends Component {
+class TalkDetails extends Component {
   constructor(props) {
     super(props)
     this.state = { talk: {}, comment: '', success: false }
@@ -43,8 +45,22 @@ export default class TalkDetails extends Component {
     })
   }
 
+  recalculateAverage(ratings, newValue) {
+    const coll = _.map(ratings, 'rating')
+    coll.push(newValue.rating)
+    return Math.round(_.sum(coll)/coll.length)
+  }
+
+  hasRating(userRating, talkId) {
+    return userRating.rating != 0 && talkId == userRating.talkId
+  }
+
   render() {
-    const ratingsCount = _.filter(this.state.talk.ratings, rating => rating.rating && rating.rating != 0).length
+    const savedRatings = _.filter(this.state.talk.ratings, rating => rating.rating && rating.rating != 0)
+    const ratingsCount = this.hasRating(this.props.userRating, this.state.talk.id) ? savedRatings.length + 1 : savedRatings.length
+    const averageRating = this.hasRating(this.props.userRating, this.state.talk.id) ?
+                          this.recalculateAverage(savedRatings, this.props.userRating) :
+                          this.state.talk.averageRating
     const comments = _.map(_.filter(this.state.talk.ratings,
                                     rating => rating.comment && rating.comment != 0),
                            rating => rating.comment)
@@ -66,7 +82,7 @@ export default class TalkDetails extends Component {
         <div className="flexible-component talk-rating">
           <div className="flexible-column">
             <h2>Current Rating is</h2>
-            <div className="hero-rating">{this.state.talk.averageRating}/5</div>
+            <div className="hero-rating">{averageRating}/5</div>
             { this.state.talk.ratings ?
               (<h2>with {ratingsCount} votes</h2>) : null
             }
@@ -103,3 +119,11 @@ export default class TalkDetails extends Component {
     )
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    userRating: state.userRating
+  }
+}
+
+export default connect(mapStateToProps)(TalkDetails)
